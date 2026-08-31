@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.8.0/aframe.min.js"></script>
+    <script src="scripts/hide-on-play.js"></script>
+    <script src="scripts/play-on-click.js"></script>
+    <script src="scripts/remix-dropdown.js"></script>
+  </head>
+<body>
+<a-scene>
+        <a-assets>
+            <video 
+                id="video" 
+                preload="auto"
+                src="video/360.webm"
+                autoplay loop="true"
+                crossOrigin="anonymous">
+            </video>
+        </a-assets>
+
+        <a-videosphere
+            rotation="0 -90 0"
+            src="#video"
+            visible="false"
+            play-on-click>
+        </a-videosphere>
+
+    <a-camera>
+        <a-entity
+          position="0 0 -1.5"
+          text="align: center;
+                width: 6;
+                wrapCount: 100;
+                color: black;
+                value: Click or tap to start video"
+          hide-on-play="#video">
+        </a-entity>
+    </a-camera>        
+</a-scene>
+</body>
+</html>
